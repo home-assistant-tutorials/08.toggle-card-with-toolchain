@@ -16,8 +16,8 @@ Adding *Nodejs*, *Npm* and the bundler *Parcel*.
 
 You learn:
 
-* how to install nodejs and npm into the development conatainer
-* how to updat them to recent versions
+* how to install nodejs and npm into the development container
+* how to update them to recent versions
 * how to use npm (the basics)
 * how to install *Parcel*
 * how to setup and organize the projects layout
@@ -27,6 +27,12 @@ You learn:
 
 Installing a typical toolchain for frontend development based on `node` and
 `npm`, adjusting the layout of the directories and running the toolchain.
+
+## Prerequisites
+
+* previous tutorial to build upon (tutorial 07)
+* adding entities, cards and resources (tutorial 04, 02)
+* setting up the core developers container (tutorial 01)
 
 ## About
 
@@ -44,7 +50,7 @@ steps, though.
 You have three options how to use this tutorial. It's your decision how deep
 you want to dive.
 
-1. Reading as documntation
+1. Reading as documentation
 
     You can just read it as a kind of documentation.
 
@@ -71,18 +77,18 @@ to run the cloned repo. Then try and learn to set up your own project.
 ### Installing node and npm inside the core developers container
 
 `apt` is the package manager of Debian. It does install stable versions.
-Somtimes they are rather outdated. The *node package manager* `npm` is the
+Sometimes they are rather outdated. The *node package manager* `npm` is the
 package manager to run the project. It manages node modules and their large
 dependency tree.
 
 Open a shell and run the following commands.
 
 ```sh
-    suod apt update
+    sudo apt update
     sudo apt install npm
 ```
 
-Check that node and npm have been installed by checing their versions.
+Check that node and npm have been installed by checking their versions.
 
 ```sh
     node -v
@@ -90,7 +96,7 @@ Check that node and npm have been installed by checing their versions.
 ```
 
 
-Unfortunately this versions on Debian are outdatet and will not work for recent
+Unfortunately this versions on Debian are outdated and will not work for recent
 packages. We use `npm` to update `node.js` and `npm` themselves.
 
 ```sh
@@ -99,13 +105,13 @@ packages. We use `npm` to update `node.js` and `npm` themselves.
 ```
 
 This globally installs the module `n`, which is a [version manager for
-`node.js`](https://github.com/tj/n). Then install the curent stable version.
+`node.js`](https://github.com/tj/n). Then install the current stable version.
 
 ```sh
     sudo n stable
 ```
 
-You may also want to try the latest verstion.
+You may also want to try the latest version.
 
 ```sh
     sudo n latest
@@ -124,7 +130,7 @@ Check that you got more recent versions.
 
 ### Directories
 
-Create the directoris `src/` and `dist/`. The latter would be created by the
+Create the directories `src/` and `dist/`. The latter would be created by the
 toolchain. Just do it for sake of awareness. You can delete the directory
 `dist/` any time to test the build process is fully working.
 
@@ -152,7 +158,7 @@ the default location `dist/` now.
 We don't do the typical `npm init` call. It generates information, that is
 targeted for libraries that are published to the *NPM Registry*. HACS retrieves
 its information from the settings of the repository on Github. A minimal
-`package.json` will be autocreated anyway as soon as we install packages.
+`package.json` will be auto created anyway as soon as we install packages.
 
 Let's try by installing the bundler `parcel`.
 
@@ -161,7 +167,7 @@ Let's try by installing the bundler `parcel`.
 ```
 
 The option `--save-dev` tells that this is a management tool. It should not go
-into `card.js` itself. A file `pagckage.json` has been created reflecting this.
+into `card.js` itself. A file `package.json` has been created reflecting this.
 
 ```json
 {
@@ -173,7 +179,7 @@ into `card.js` itself. A file `pagckage.json` has been created reflecting this.
 
 There is also a file `package-lock.json`. It describes all the dependencies that
 have been downloaded for packages in `package.json` and all the versions that
-have been resoved for them. It's important to commit this file to the git
+have been resolved for them. It's important to commit this file to the git
 repository.
 
 The downloaded libraries have been installed into a folder named `node_modules`.
@@ -192,7 +198,7 @@ short and easy. We can run *Parcel* without setting up any configuration. It is
 so much easier to get started.
 
 You have placed your `card.js` file into the `src/` folder. Let's see how to
-bring it to the `dist/` foder. If you want to follow along step by step, you can
+bring it to the `dist/` folder. If you want to follow along step by step, you can
 copy a standalone `card.js` from a previous tutorial. If you forked this
 tutorial `card.js` will draw in the other files already. That's just as fine.
 
@@ -209,7 +215,7 @@ command:
 
 The file `dist/card.js` get's created. Not only that. The sources are watched.
 Whenever one of the sourcefile is edited `dist/card.js` gets regenerated.
-A hard realod of the browser is still required.
+A hard reload of the browser is still required.
 
 For sure you have to register the card before as a resource. Mind the new
 subdirectory `dist/` is now part of the path.
