@@ -145,7 +145,7 @@ export class ToggleCardWithToolchain extends HTMLElement {
     static getStubConfig() {
         return {
             entity: "input_boolean.tcwt",
-            header: "TOP",
+            header: "",
         };
     }
 }

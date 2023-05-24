@@ -2,7 +2,7 @@ function $parcel$interopDefault(a) {
   return a && a.__esModule ? a.default : a;
 }
 var $2274bf72133e3065$exports = {};
-$2274bf72133e3065$exports = "\n<ha-card>\n    <div class=\"card-content\">\n        <p class=\"error error hidden\">\n        </p><dl class=\"dl\">\n            <dt class=\"dt\"></dt>\n            <dd class=\"dd\">\n                <span class=\"toggle\">\n                    <span class=\"button\"></span>\n                </span>\n                <span class=\"value\">\n                </span>\n            </dd>\n        </dl>\n    </div>\n</ha-card><script src=\"/card.9ba1a80a.js\"></script>";
+$2274bf72133e3065$exports = "\n<ha-card>\n    <div class=\"card-content\">\n        <p class=\"error error hidden\">\n        </p><dl class=\"dl\">\n            <dt class=\"dt\"></dt>\n            <dd class=\"dd\">\n                <span class=\"toggle\">\n                    <span class=\"button\"></span>\n                </span>\n                <span class=\"value\">\n                </span>\n            </dd>\n        </dl>\n    </div>\n</ha-card>";
 
 
 var $643e2572997ae2f9$exports = {};
@@ -124,14 +124,14 @@ class $beabb7f95d0325e3$export$44473774f20a91cd extends HTMLElement {
     static getStubConfig() {
         return {
             entity: "input_boolean.tcwt",
-            header: "TOP"
+            header: ""
         };
     }
 }
 
 
 var $69fa7c10f0e93f0b$exports = {};
-$69fa7c10f0e93f0b$exports = "\n<form class=\"table\">\n    <div class=\"row\"><label class=\"label cell\" for=\"header\">Header:</label><input class=\"value cell\" id=\"header\"></div>\n    <div class=\"row\"><label class=\"label cell\" for=\"entity\">Entity:</label><input class=\"value cell\" id=\"entity\"></div>\n</form><script src=\"/editor.2562506f.js\"></script>";
+$69fa7c10f0e93f0b$exports = "\n<form class=\"table\">\n    <div class=\"row\"><label class=\"label cell\" for=\"header\">Header:</label><input class=\"value cell\" id=\"header\"></div>\n    <div class=\"row\"><label class=\"label cell\" for=\"entity\">Entity:</label><input class=\"value cell\" id=\"entity\"></div>\n</form>";
 
 
 var $0d52b71427515847$exports = {};
