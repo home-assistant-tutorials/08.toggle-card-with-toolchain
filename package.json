@@ -1,0 +1,11 @@
+{
+  "source": "src/index.js",
+  "main": "dist/card.js",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
