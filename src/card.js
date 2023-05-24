@@ -1,3 +1,6 @@
+import html from "bundle-text:./card.html";
+import css from "bundle-text:./card.css";
+
 export class ToggleCardWithToolchain extends HTMLElement {
     // private properties
     _config;
@@ -7,7 +10,7 @@ export class ToggleCardWithToolchain extends HTMLElement {
     // lifecycle
     constructor() {
         super();
-        this.doCard();
+        this.doHtml();
         this.doStyle();
         this.doAttach();
         this.doQueryElements();
@@ -66,70 +69,15 @@ export class ToggleCardWithToolchain extends HTMLElement {
         }
     }
 
-    doCard() {
-        this._elements.card = document.createElement("ha-card");
-        this._elements.card.innerHTML = `
-                <div class="card-content">
-                    <p class="error error hidden">
-                    <dl class="dl">
-                        <dt class="dt"></dt>
-                        <dd class="dd">
-                            <span class="toggle">
-                                <span class="button"></span>
-                            </span>
-                            <span class="value">
-                            </span>
-                        </dd>
-                    </dl>
-                </div>
-        `;
+    doHtml() {
+        const importBox = document.createElement("div");
+        importBox.innerHTML = html;
+        this._elements.card = importBox.firstElementChild;
     }
 
     doStyle() {
         this._elements.style = document.createElement("style");
-        this._elements.style.textContent = `
-            .error {
-                text-color: red;
-            }
-            .error.hidden { display: none; }
-            .dl {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-            .dl.hidden { display: none; }
-            .dt {
-                display: flex;
-                align-content: center;
-                flex-wrap: wrap;
-            }
-            .dd {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, auto) minmax(0, 2fr));
-                margin: 0;
-            }
-            .toggle {
-                padding: 0.6em;
-                border: grey;
-                border-radius: 50%;
-            }
-            .toggle.on { background-color: green; }
-            .toggle.off{ background-color: red; }
-            .button {
-                display: block;
-                border: outset 0.2em;
-                border-radius: 50%;
-                border-color: silver;
-                background-color: silver;
-                width: 1.4em;
-                height: 1.4em;
-            }
-            .value {
-                padding-left: 0.5em;
-                display: flex;
-                align-content: center;
-                flex-wrap: wrap;
-            }
-        `;
+        this._elements.style.textContent = css;
     }
 
     doAttach() {

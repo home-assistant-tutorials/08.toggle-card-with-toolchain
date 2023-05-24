@@ -1,4 +1,27 @@
 
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)
+
+# Toggle Card With a Toolchain
+
+![parcel watch](img/watch.png)
+
+Adding *Nodejs*, *Npm* and the bundler *Parcel*.
+
+***
+
+* @published: May 2023
+* @author: Elmar Hinz
+* @name: `toggle-card-with-toolchain`
+* @id: `tcwt`
+
+You learn:
+
+* how to install nodejs and npm into the development conatainer
+* how to updat them to recent versions
+* how to use npm (the basics)
+* how to install *Parcel*
+* how to setup and organize the projects layout
+* how to inline *HTML* and *CSS* files
 
 ## Goal
 
@@ -19,18 +42,29 @@ README I ship final runnable result of the files. I can't ship the intermediate
 steps, though.
 
 You have three options how to use this tutorial. It's your decision how deep
-you want to dive. You can just read it as a kind of documentation. You can
-fork and/or clone it to inspect and run the final result. You can follow along
-and do everything from scratch to experience the full setup of a project.
+you want to dive.
 
-If you decide to take the third approach start by copying the the file `card.js`
-from the previous tutorial and adjust the names of the class and identifiers
-to match this tutorial. Staying with the previous identifiers may work also
-but could cause confusion and conflicts.
+1. Reading as documntation
 
-Even if you take the second approach you will need to set up the tools to run
-them. In this case mind to run `npm install` after cloning to install the
-libraries.
+    You can just read it as a kind of documentation.
+
+2. cloning and running the repository
+
+    You can fork and/or clone it to inspect and run the final result. Even if
+    you take this approach you will need to set up the tools to run them. In
+    this case mind to run `npm install` after cloning to install the libraries.
+
+3. step by step
+
+    You can follow along and do everything from scratch to experience the full
+    setup of a project. Start by copying the the file `card.js` from the
+    previous tutorial and adjust the names of the class and identifiers to match
+    this tutorial.  Staying with the previous identifiers may work also but
+    could cause confusion and conflicts.
+
+If you want more advice, just do all three steps. First skim-read the tutorial
+to see what it is about. Then do the installation of *node* and *npm* to be able
+to run the cloned repo. Then try and learn to set up your own project.
 
 ## Setup
 
@@ -222,6 +256,8 @@ src/editor.html
 src/editor.css
 ```
 
+#### Importing JS
+
 In `package.json` set the `source` to `src/index.js`. We use this file as
 entrypoint to import the other files.
 
@@ -254,3 +290,80 @@ export class ToggleCardWithToolchain extends HTMLElement {
     [ ... ]
 }
 ```
+
+#### Importing CSS
+
+Write the CSS of `card.js` into `card.css`. It is imported like this into
+`card.js`.
+
+```js
+import css from "bundle-text:./card.css";
+```
+
+The method `doStyle` gets reduced.
+
+```js
+    doStyle() {
+        this._elements.style = document.createElement("style");
+        this._elements.style.textContent = css;
+    }
+```
+
+That's all. The editor is done the same way.
+
+#### Importing HTML
+
+We take the same approach. I use an "importBox" trick to be able to place the
+full HTML into `card.html` including the root tag.
+
+```html
+<ha-card>
+    <div class="card-content">
+        <p class="error error hidden">
+        <dl class="dl">
+            <dt class="dt"></dt>
+            <dd class="dd">
+                <span class="toggle">
+                    <span class="button"></span>
+                </span>
+                <span class="value">
+                </span>
+            </dd>
+        </dl>
+    </div>
+</ha-card>
+```
+
+```js
+import html from "bundle-text:./card.html";
+[...]
+doHtml() {
+    const importBox = document.createElement("div");
+    importBox.innerHTML = html;
+    this._elements.card = importBox.firstElementChild;
+}
+```
+
+The editor is done the same way.
+
+See the documentation to learn more about
+[inlining](https://parceljs.org/features/bundle-inlining/) with *Parcel*.
+
+## Where is the toolchain?
+
+You may ask. You have only seen one tool, *Parcel*?
+
+Well, you could already count `node` and `npm` into the toolchain, too. The
+point is, that *Parcel* automagically manages the toolchain to a certain extend.
+In our example it has silently added a module to `package.json` to inline the
+*CSS* and *HTML* files.
+
+  ```js
+  "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.8.3",
+    "parcel": "^2.8.3"
+  }
+  ```
+
+To learn all about *Parcel* [please consult the
+docs](https://parceljs.org/docs/).

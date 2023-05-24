@@ -1,3 +1,5 @@
+import html from "bundle-text:./editor.html";
+import css from "bundle-text:./editor.css";
 
 export class ToggleCardWithToolchainEditor extends HTMLElement {
     // private properties
@@ -8,8 +10,7 @@ export class ToggleCardWithToolchainEditor extends HTMLElement {
     // lifecycle
     constructor() {
         super();
-        console.log("editor:constructor()");
-        this.doEditor();
+        this.doHtml();
         this.doStyle();
         this.doAttach();
         this.doQueryElements();
@@ -17,45 +18,29 @@ export class ToggleCardWithToolchainEditor extends HTMLElement {
     }
 
     setConfig(config) {
-        console.log("editor:setConfig()");
         this._config = config;
         this.doUpdateConfig();
     }
 
     set hass(hass) {
-        console.log("editor.hass()");
         this._hass = hass;
         this.doUpdateHass();
     }
 
     onChanged(event) {
-        console.log("editor.onChanged()");
         this.doMessageForUpdate(event);
     }
 
     // jobs
-    doEditor() {
-        this._elements.editor = document.createElement("form");
-        this._elements.editor.innerHTML = `
-            <div class="row"><label class="label" for="header">Header:</label><input class="value" id="header"></input></div>
-            <div class="row"><label class="label" for="entity">Entity:</label><input class="value" id="entity"></input></div>
-        `;
+    doHtml() {
+        const importBox = document.createElement("div");
+        importBox.innerHTML = html;
+        this._elements.editor = importBox.firstElementChild;
     }
 
     doStyle() {
         this._elements.style = document.createElement("style");
-        this._elements.style.textContent = `
-            form {
-                display: table;
-            }
-            .row {
-                display: table-row;
-            }
-            .label, .value {
-                display: table-cell;
-                padding: 0.5em;
-            }
-        `;
+        this._elements.style.textContent = css;
     }
 
     doAttach() {
