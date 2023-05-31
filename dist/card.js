@@ -1,15 +1,15 @@
 function $parcel$interopDefault(a) {
   return a && a.__esModule ? a.default : a;
 }
-var $2274bf72133e3065$exports = {};
-$2274bf72133e3065$exports = "\n<ha-card>\n    <div class=\"card-content\">\n        <p class=\"error error hidden\">\n        </p><dl class=\"dl\">\n            <dt class=\"dt\"></dt>\n            <dd class=\"dd\">\n                <span class=\"toggle\">\n                    <span class=\"button\"></span>\n                </span>\n                <span class=\"value\">\n                </span>\n            </dd>\n        </dl>\n    </div>\n</ha-card>";
+var $613c0f48d1c19570$exports = {};
+$613c0f48d1c19570$exports = "\n<ha-card>\n    <div class=\"card-content\">\n        <p class=\"error error hidden\">\n        </p><dl class=\"dl\">\n            <dt class=\"dt\"></dt>\n            <dd class=\"dd\">\n                <span class=\"toggle\">\n                    <span class=\"button\"></span>\n                </span>\n                <span class=\"value\">\n                </span>\n            </dd>\n        </dl>\n    </div>\n</ha-card>";
 
 
-var $643e2572997ae2f9$exports = {};
-$643e2572997ae2f9$exports = ".error {\n  color: red;\n}\n\n.error.hidden {\n  display: none;\n}\n\n.dl {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  display: grid;\n}\n\n.dl.hidden {\n  display: none;\n}\n\n.dt {\n  flex-wrap: wrap;\n  align-content: center;\n  display: flex;\n}\n\n.dd {\n  grid-template-columns: repeat(2, minmax(0, auto) minmax(0, 2fr));\n  margin: 0;\n  display: grid;\n}\n\n.toggle {\n  border: gray;\n  border-radius: 50%;\n  padding: .6em;\n}\n\n.toggle.on {\n  background-color: green;\n}\n\n.toggle.off {\n  background-color: red;\n}\n\n.button {\n  width: 1.4em;\n  height: 1.4em;\n  background-color: silver;\n  border: .2em outset silver;\n  border-radius: 50%;\n  display: block;\n}\n\n.value {\n  flex-wrap: wrap;\n  align-content: center;\n  padding-left: .5em;\n  display: flex;\n}\n\n";
+var $f75af1db21f1c9c2$exports = {};
+$f75af1db21f1c9c2$exports = ".error {\n  color: red;\n}\n\n.error.hidden {\n  display: none;\n}\n\n.dl {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  display: grid;\n}\n\n.dl.hidden {\n  display: none;\n}\n\n.dt {\n  flex-wrap: wrap;\n  align-content: center;\n  display: flex;\n}\n\n.dd {\n  grid-template-columns: repeat(2, minmax(0, auto) minmax(0, 2fr));\n  margin: 0;\n  display: grid;\n}\n\n.toggle {\n  border: gray;\n  border-radius: 50%;\n  padding: .6em;\n}\n\n.toggle.on {\n  background-color: green;\n}\n\n.toggle.off {\n  background-color: red;\n}\n\n.button {\n  width: 1.4em;\n  height: 1.4em;\n  background-color: silver;\n  border: .2em outset silver;\n  border-radius: 50%;\n  display: block;\n}\n\n.value {\n  flex-wrap: wrap;\n  align-content: center;\n  padding-left: .5em;\n  display: flex;\n}\n\n";
 
 
-class $beabb7f95d0325e3$export$44473774f20a91cd extends HTMLElement {
+class $bf513b85805031e6$export$44473774f20a91cd extends HTMLElement {
     // private properties
     _config;
     _hass;
@@ -64,12 +64,12 @@ class $beabb7f95d0325e3$export$44473774f20a91cd extends HTMLElement {
     }
     doHtml() {
         const importBox = document.createElement("div");
-        importBox.innerHTML = (0, (/*@__PURE__*/$parcel$interopDefault($2274bf72133e3065$exports)));
+        importBox.innerHTML = (0, (/*@__PURE__*/$parcel$interopDefault($613c0f48d1c19570$exports)));
         this._elements.card = importBox.firstElementChild;
     }
     doStyle() {
         this._elements.style = document.createElement("style");
-        this._elements.style.textContent = (0, (/*@__PURE__*/$parcel$interopDefault($643e2572997ae2f9$exports)));
+        this._elements.style.textContent = (0, (/*@__PURE__*/$parcel$interopDefault($f75af1db21f1c9c2$exports)));
     }
     doAttach() {
         this.attachShadow({
@@ -130,15 +130,15 @@ class $beabb7f95d0325e3$export$44473774f20a91cd extends HTMLElement {
 }
 
 
-var $69fa7c10f0e93f0b$exports = {};
-$69fa7c10f0e93f0b$exports = "\n<form class=\"table\">\n    <div class=\"row\"><label class=\"label cell\" for=\"header\">Header:</label><input class=\"value cell\" id=\"header\"></div>\n    <div class=\"row\"><label class=\"label cell\" for=\"entity\">Entity:</label><input class=\"value cell\" id=\"entity\"></div>\n</form>";
+var $af601b5029955fa4$exports = {};
+$af601b5029955fa4$exports = "\n<form class=\"table\">\n    <div class=\"row\"><label class=\"label cell\" for=\"header\">Header:</label><input class=\"value cell\" id=\"header\"></div>\n    <div class=\"row\"><label class=\"label cell\" for=\"entity\">Entity:</label><input class=\"value cell\" id=\"entity\"></div>\n</form>";
 
 
-var $0d52b71427515847$exports = {};
-$0d52b71427515847$exports = ".table {\n  display: table;\n}\n\n.row {\n  display: table-row;\n}\n\n.cell {\n  padding: .5em;\n  display: table-cell;\n}\n\n";
+var $66bfc048aff65ddb$exports = {};
+$66bfc048aff65ddb$exports = ".table {\n  display: table;\n}\n\n.row {\n  display: table-row;\n}\n\n.cell {\n  padding: .5em;\n  display: table-cell;\n}\n\n";
 
 
-class $024613ee6ee50c79$export$996cbfeb08977e54 extends HTMLElement {
+class $fc7d6e547b6fcb14$export$996cbfeb08977e54 extends HTMLElement {
     // private properties
     _config;
     _hass;
@@ -166,12 +166,12 @@ class $024613ee6ee50c79$export$996cbfeb08977e54 extends HTMLElement {
     // jobs
     doHtml() {
         const importBox = document.createElement("div");
-        importBox.innerHTML = (0, (/*@__PURE__*/$parcel$interopDefault($69fa7c10f0e93f0b$exports)));
+        importBox.innerHTML = (0, (/*@__PURE__*/$parcel$interopDefault($af601b5029955fa4$exports)));
         this._elements.editor = importBox.firstElementChild;
     }
     doStyle() {
         this._elements.style = document.createElement("style");
-        this._elements.style.textContent = (0, (/*@__PURE__*/$parcel$interopDefault($0d52b71427515847$exports)));
+        this._elements.style.textContent = (0, (/*@__PURE__*/$parcel$interopDefault($66bfc048aff65ddb$exports)));
     }
     doAttach() {
         this.attachShadow({
@@ -209,8 +209,8 @@ class $024613ee6ee50c79$export$996cbfeb08977e54 extends HTMLElement {
 }
 
 
-customElements.define("toggle-card-with-toolchain", (0, $beabb7f95d0325e3$export$44473774f20a91cd));
-customElements.define("toggle-card-with-toolchain-editor", (0, $024613ee6ee50c79$export$996cbfeb08977e54));
+customElements.define("toggle-card-with-toolchain", (0, $bf513b85805031e6$export$44473774f20a91cd));
+customElements.define("toggle-card-with-toolchain-editor", (0, $fc7d6e547b6fcb14$export$996cbfeb08977e54));
 window.customCards = window.customCards || [];
 window.customCards.push({
     type: "toggle-card-with-toolchain",

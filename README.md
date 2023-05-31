@@ -243,6 +243,27 @@ call them as `npm run watch` and `npm rum build`.
 }
 ```
 
+![Included as a module](img/module.png)
+
+An investigation of source of the dashboard reveals, that the script is included
+as a module. Exports and imports are possible. We will need them in the next
+tutorial. We need to modify `package.json` to produce a module.
+
+  ```json
+  [...]
+  "source": "src/index.js",
+  "module": "dist/card.js",
+  "targets": {
+    "module": {
+      "includeNodeModules": true
+    }
+  },
+  [...]
+  ```
+
+  By setting `includeNodeModules` to `true` the output will still be a single
+  `card.js` file with all required libraries included.
+
 Visit the documentation of [*Parcel*](https://parceljs.org/docs/) to get more
 ideas.
 
