@@ -376,6 +376,15 @@ The editor is done the same way.
 See the documentation to learn more about
 [inlining](https://parceljs.org/features/bundle-inlining/) with *Parcel*.
 
+### Importing NPM libraries
+
+Once a library is installed with NPM you can import it right away. We will
+do this in the next tutorial with the `Lit` library. To jump a little ahead it
+will look like this.
+
+* Installation: `npm add lit`
+* Import `import { html, LitElement, nothing } from 'lit'`
+
 ## Where is the toolchain?
 
 You may ask. You have only seen one tool, *Parcel*?
