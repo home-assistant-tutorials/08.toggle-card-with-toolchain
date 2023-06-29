@@ -245,13 +245,13 @@ call them as `npm run watch` and `npm rum build`.
 
 ![Included as a module](img/module.png)
 
-An investigation of source of the dashboard reveals, that the script is included
-as a module. Exports and imports are possible. We will need them in the next
-tutorial. We need to modify `package.json` to produce a module.
+An investigation of the HTML source of the dashboard reveals, that the script is
+included as a module. Exports and imports are possible. We will need them in the
+next tutorial. We need to modify `package.json` to produce a module.
 
   ```json
   [...]
-  "source": "src/index.js",
+  "source": "src/card.js",
   "module": "dist/card.js",
   "targets": {
     "module": {
@@ -261,8 +261,8 @@ tutorial. We need to modify `package.json` to produce a module.
   [...]
   ```
 
-  By setting `includeNodeModules` to `true` the output will still be a single
-  `card.js` file with all required libraries included.
+By setting `includeNodeModules` to `true` the output will still be a single
+`card.js` file with all required libraries included.
 
 Visit the documentation of [*Parcel*](https://parceljs.org/docs/) to get more
 ideas.
@@ -287,6 +287,18 @@ src/editor.css
 
 In `package.json` set the `source` to `src/index.js`. We use this file as
 entrypoint to import the other files.
+
+  ```json
+  [...]
+  "source": "src/index.js",
+  [...]
+  ```
+
+If you want to run `parcel` directly also notice this change.
+
+```sh
+npx parcel src/index.js
+```
 
 ```js
 import { ToggleCardWithToolchain } from "./card";
