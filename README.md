@@ -298,9 +298,9 @@ If you want to run `parcel` directly also notice this change.
 npx parcel src/index.js
 ```
 
-At this point I recommend to use the scripts configured in `package.json`.
-I didn't investigate how it will deal with modules when running it directly.
-In case please refer to the docs.
+At this point I recommend to use the scripts configured in `package.json`.  I
+didn't investigate how far `parcel` will respect the settings from
+`package.json` when running it directly. In case please refer to the docs.
 
 Imports in `src/index.js`:
 
