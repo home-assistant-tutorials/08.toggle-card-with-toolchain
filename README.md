@@ -289,9 +289,7 @@ In `package.json` set the `source` to `src/index.js`. We use this file as
 entrypoint to import the other files.
 
   ```json
-  [...]
   "source": "src/index.js",
-  [...]
   ```
 
 If you want to run `parcel` directly also notice this change.
@@ -299,6 +297,12 @@ If you want to run `parcel` directly also notice this change.
 ```sh
 npx parcel src/index.js
 ```
+
+At this point I recommend to use the scripts configured in `package.json`.
+I didn't investigate how it will deal with modules when running it directly.
+In case please refer to the docs.
+
+Imports in `src/index.js`:
 
 ```js
 import { ToggleCardWithToolchain } from "./card";
